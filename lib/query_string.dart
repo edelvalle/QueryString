@@ -21,4 +21,16 @@ class QueryString {
 
     return result;
   }
+
+  static String encode(Map<String, dynamic> query) {
+    List<String> query_string = [];
+
+    query.forEach((String key, dynamic value) {
+      String encoded_key = Uri.encodeComponent(key);
+      String encoded_value = Uri.encodeComponent(value.toString());
+      query_string.add('$encoded_key=$encoded_value');
+    });
+
+    return query_string.join('&');
+  }
 }
