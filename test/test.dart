@@ -24,6 +24,5 @@ void main() {
     var data = {'parameter': 2, 'another': 'String with spaces'};
     var result = QueryString.encode(data);
     expect(result, 'parameter=2&another=String%20with%20spaces');
-
   });
 }
